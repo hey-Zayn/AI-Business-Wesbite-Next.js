@@ -43,7 +43,10 @@ const Circles = () => {
     }, { scope: container });
 
     return (
-        <div ref={container} className='w-full h-screen flex justify-center items-center relative z-10 bg-transparent animate-spin-slower'>
+        <div ref={container} className='w-full h-screen flex justify-center items-center relative z-10 bg-transparent 
+        
+        
+        '>
             <div className='relative w-full h-full'>
                 {/* First image */}
                 <img
