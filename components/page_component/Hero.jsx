@@ -18,184 +18,142 @@ const Hero = () => {
     const hero_img = useRef();
     const hero_badge = useRef();
 
-    useGSAP(() => {
-        // Create a master timeline with enhanced settings
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: hero_container.current,
-                start: "top 90%",
-                end: "bottom 10%",
-                toggleActions: "play none none none",
-                markers: false
-            },
-            defaults: {
-                ease: "power3.out"
+   useGSAP(() => {
+    // Optimized timeline with smoother settings
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: hero_container.current,
+            start: "top 85%",
+            end: "bottom 15%",
+            toggleActions: "play none none none",
+            markers: false
+        },
+        defaults: {
+            ease: "power2.out"
+        }
+    });
+
+    // Smoother badge animation
+    tl.fromTo(hero_badge.current,
+        {
+            opacity: 0,
+            // y: 30,
+            scale: 0.9,
+            filter: "blur(8px)"
+        },
+        {
+            opacity: 1,
+            // y: 0,
+            scale: 1,
+            filter: "blur(0px)",
+            duration: 0.9,
+            ease: "back.out(1.5)",
+            clearProps: "filter"
+        }
+    )
+    // Smoother heading animation
+    .fromTo(hero_h1.current,
+        {
+            opacity: 0,
+            y: 50,
+            scale: 0.95
+        },
+        {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.1,
+            ease: "power3.out"
+        },
+        "-=0.3"
+    )
+    // Smoother paragraph animation
+    .fromTo(hero_p.current,
+        {
+            opacity: 0,
+            y: 40,
+            scale: 0.98
+        },
+        {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.0,
+            ease: "power2.out"
+        },
+        "-=0.5"
+    )
+    // Smoother button animation
+    .fromTo(hero_button.current,
+        {
+            opacity: 0,
+            y: 30,
+            scale: 0.95
+        },
+        {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out"
+        },
+        "-=0.4"
+    )
+    // Smoother image animation
+    .fromTo(hero_img.current,
+        {
+            opacity: 0,
+            y: 60,
+            scale: 0.98
+        },
+        {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.3,
+            ease: "power3.out",
+            onStart: function() {
+                
+                gsap.to(hero_img.current, {
+                    // y: -0,
+                    // duration: 3,
+                    // ease: "sine.inOut",
+                    // yoyo: true,
+                    // repeat: -1,
+                    // repeatDelay: 0.5
+                });
             }
-        });
+        },
+        "-=0.2"
+    );
 
-        // Enhanced badge animation with glow effect
-        tl.fromTo(hero_badge.current,
-            {
-                opacity: 0,
-                // y: 50,
-                scale: 0.6,
-                rotationX: -90,
-                filter: "blur(10px)"
-            },
-            {
-                opacity: 1,
-                // y: 0,
-                scale: 1,
-                rotationX: 0,
-                filter: "blur(0px)",
-                duration: 1.2,
-                ease: "back.out(2)",
-                onComplete: function () {
-                    // Add pulsing glow effect after badge appears
-                    gsap.to(hero_badge.current, {
-                        boxShadow: "0 0 20px rgba(152, 85, 255, 0.6)",
-                        duration: 0.8,
-                        yoyo: true,
-                        repeat: 1,
-                        ease: "power2.inOut"
-                    });
-                }
-            }
-        )
-            // Heading with character-like stagger and glow
-            .fromTo(hero_h1.current,
-                {
-                    opacity: 0,
-                    y: 80,
-                    scale: 0.8,
-                    filter: "blur(100px)"
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    filter: "blur(0px)",
-                    duration: 1.4,
-                    ease: "expo.out",
-                    onStart: function () {
-                        // Add text shadow glow
-                        gsap.to(hero_h1.current, {
-                            textShadow: "0 0 30px rgba(255, 255, 255, 0.8)",
-                            duration: 1,
-                            yoyo: true,
-                            repeat: 1,
-                            ease: "power2.inOut"
-                        });
-                    }
-                },
-                "-=0.5"
-            )
-            // Paragraph with typewriter effect simulation
-            .fromTo(hero_p.current,
-                {
-                    opacity: 0,
-                    y: 60,
-                    scale: 0.9,
-                    clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)"
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                    duration: 1.6,
-                    ease: "power2.inOut"
-                },
-                "-=0.8"
-            )
-            // Button with magnetic hover preparation and bounce
-            .fromTo(hero_button.current,
-                {
-                    opacity: 0,
-                    y: 40,
-                    scale: 0.5,
-                    rotationY: 180,
-                    transformOrigin: "center center"
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    rotationY: 0,
-                    duration: 1.1,
-                    ease: "elastic.out(1.2, 0.5)",
-                    onComplete: function () {
-                        // Prepare button for hover effects
-                        gsap.set(hero_button.current, {
-                            transformPerspective: 1000
-                        });
-                    }
-                },
-                "-=0.6"
-            )
-            // Main image with parallax and glow effects
-            .fromTo(hero_img.current,
-                {
-                    opacity: 0,
-                    y: 10,
-                    scale: 0.7,
-                    rotationY: 30,
-                    filter: "blur(20px) brightness(1.5)",
-                    transformOrigin: "center bottom"
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    rotationY: 0,
-                    filter: "blur(0px) brightness(1)",
-                    duration: 1.8,
-                    ease: "power4.out",
-                    onStart: function () {
-                        // Add floating animation to the image container
-                        gsap.to(hero_img.current, {
-                            y: -10,
-                            duration: 2,
-                            ease: "power1.inOut",
-                            yoyo: true,
-                            repeat: -1
-                        });
-                    }
-                },
-                "-=0.4"
-            )
-            // Final flourish - animate all elements together for a polished finish
-            .to([hero_badge.current, hero_h1.current, hero_p.current, hero_button.current, hero_img.current], {
-                scale: 1.02,
-                duration: 0.3,
-                stagger: 0.1,
-                ease: "power2.inOut",
-                yoyo: true,
-                repeat: 1
-            }, "-=0.5");
-
-        // Add continuous subtle animations
-        const continuousTl = gsap.timeline({ repeat: -1, yoyo: true });
-
-        // Subtle badge pulse
-        continuousTl.to(hero_badge.current, {
-            y: -0,
-            duration: 2,
+    // Smoother continuous animations
+    const continuousTl = gsap.timeline({ 
+        repeat: -1, 
+        yoyo: true,
+        defaults: {
             ease: "sine.inOut"
-        })
-            .to(hero_h1.current.querySelector('span'), {
-                backgroundPosition: "0% -100%",
-                duration: 3,
-                ease: "none"
-            }, 0)
-            .to(hero_button.current, {
-                rotationY: 2,
-                duration: 2,
-                ease: "sine.inOut"
-            }, 0);
+        }
+    });
 
-    }, { scope: hero_container });
+    // Subtle continuous animations
+    continuousTl.to(hero_badge.current, {
+        y: -0,
+        duration: 3,
+        ease: "sine.inOut"
+    }, 0)
+    .to(hero_h1.current.querySelector('span'), {
+        backgroundPosition: "0% -50%",
+        duration: 4,
+        ease: "none"
+    }, 0)
+    .to(hero_button.current, {
+        rotationY: 1,
+        duration: 3,
+        ease: "sine.inOut"
+    }, 0);
 
+}, { scope: hero_container });
 
 
     return (
@@ -207,7 +165,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className='w-full text-center space-y-6 mb-10 z-50 relative'>
+                <div className='w-full text-center space-y-6 mb-10 z-50 relative '>
                     <h1 ref={hero_h1} className='text-8xl max-md:text-6xl max-sm:text-4xl leading-22 max-md:leading-14 max-sm:leading-9'>
                         Boost your <br />
                         <span className="bg-gradient-to-b from-white to-purple-600 bg-clip-text text-transparent">
