@@ -17,8 +17,8 @@ const CTA = () => {
     const CTAINput = useRef();
     const input = useRef();
     const CTAButton = useRef();
-    const CTAtext= useRef();
-    
+    const CTAtext = useRef();
+
 
     useGSAP(() => {
         const tl = gsap.timeline({
@@ -47,7 +47,7 @@ const CTA = () => {
                 opacity: 1,
                 duration: 1.2
             }
-            )
+        )
         tl.fromTo(CTAImage.current,
             {
                 y: -500,
@@ -60,7 +60,7 @@ const CTA = () => {
                 opacity: 1,
                 duration: 1.2
             }
-            )
+        )
             .fromTo(CTAH1.current,
                 {
                     y: 50,
@@ -73,7 +73,7 @@ const CTA = () => {
                 },
                 "-=0.6" // Overlap with previous animation
             )
-             .fromTo(CTAINput.current,
+            .fromTo(CTAINput.current,
                 {
                     // y: 50,
                     opacity: 0,
@@ -85,7 +85,7 @@ const CTA = () => {
                 },
                 "-=0.6" // Overlap with previous animation
             )
-             .fromTo(CTAtext.current,
+            .fromTo(CTAtext.current,
                 {
                     // y: 50,
                     opacity: 0,
@@ -97,10 +97,10 @@ const CTA = () => {
                 },
                 "-=0.6" // Overlap with previous animation
             )
-             
-           
-           
-           
+
+
+
+
 
     }, { scope: container });
     return (
@@ -122,9 +122,10 @@ const CTA = () => {
                             AI-driven SEO <br /> for everyone.
                         </h1>
                         <div className='flex'>
-                            <div ref={CTAINput} className='max-sm:flex-col px-1 max-sm:p-2  border border-white/20 max-sm:border-none rounded-xl'>
+                            <div ref={CTAINput} className='max-sm:flex-col px-1 max-sm:py-2 max-sm:px-10  border border-white/20 max-sm:border-none rounded-xl'>
                                 <input ref={input} type="text" className=' px-4 py-4 outline-non max-sm:border max-sm:rounded-xl max-sm:border-white/20 max-sm:px-8 max-sm:py-3 max-sm:mb-2' placeholder='Your email' />
-                                <button ref={CTAButton} className='max-sm:w-full bg-white text-black  text-xl max-sm:text-sm px-4 py-2  max-sm:px-2 max-sm:py-2 rounded-xl'>Join me</button>
+                               
+                                <button ref={CTAButton} className='max-sm:w-full bg-white text-black  text-xl max-sm:text-sm px-4 py-2  max-sm:px-2 max-sm:py-3 rounded-xl'>Join me</button>
                             </div>
                         </div>
                         <div ref={CTAtext} className='flex max-sm:flex-col gap-2'>
