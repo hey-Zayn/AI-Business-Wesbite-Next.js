@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 AI Startup Landing Page
 
-## Getting Started
+A modern, high-performance landing page for AI startups built with **Next.js 14** and **GSAP animations**. Features smooth interactions, responsive design, and optimal performance for converting visitors into customers.
 
-First, run the development server:
+![Project Preview](./public/images/preview.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[**🌐 View Live Website**](https://your-ai-landing.netlify.app)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📹 Video Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+[**🎥 Watch Video Demo**](https://www.linkedin.com/feed/update/urn:li:activity:1234567890/) <!-- Link to your LinkedIn post -->
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Animations:** [GSAP](https://greensock.com/gsap/) 
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Deployment:** [Netlify](https://www.netlify.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Fonts:** Google Fonts (Inter)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- ⚡ **Blazing Fast** - Built with Next.js 14 for optimal performance
+- 🎬 **Smooth Animations** - GSAP-powered scroll-triggered animations
+- 📱 **Fully Responsive** - Perfect on all devices and screen sizes
+- 🎨 **Modern Design** - Clean, professional AI startup aesthetic
+- 🔍 **SEO Optimized** - Proper meta tags and semantic HTML
+- ♿ **Accessible** - WCAG guidelines compliance
+- 🚀 **Easy to Customize** - Well-structured and documented code
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🏗️ Project Structure
