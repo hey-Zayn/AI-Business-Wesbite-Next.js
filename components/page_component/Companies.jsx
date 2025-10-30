@@ -36,7 +36,7 @@ const Companies = () => {
       }
     });
 
-    // Professional staggered animation for logos
+   
     tl.fromTo('.logo-heading',
       {
         opacity: 0,
@@ -49,7 +49,7 @@ const Companies = () => {
         y: 0,
         scale: 1,
         rotationY: 0,
-        duration: 0.8,
+        duration: 0.5,
         stagger: {
           amount: 1.5,
           grid: [2, 4], // 2 rows, 4 columns for better grid staggering
@@ -58,7 +58,7 @@ const Companies = () => {
         ease: "back.out(1.2)"
       }
     );
-    
+
     tl.fromTo('.logo-item',
       {
         opacity: 0,
@@ -71,13 +71,13 @@ const Companies = () => {
         y: 0,
         scale: 1,
         rotationY: 0,
-        duration: 0.8,
+        duration: 0.5,
         stagger: {
           amount: 1.5,
           grid: [2, 4], // 2 rows, 4 columns for better grid staggering
           from: "center" // Start from center and move outward
         },
-        ease: "back.out(1.2)"
+        ease: "power3.inOut"
       }
     );
 
@@ -87,7 +87,7 @@ const Companies = () => {
     <div ref={container} className='w-full h-full px-20 max-sm:px-10 py-[100px] max-sm:py-[50px] bg-black'>
       <div className='space-y-12'>
         <h1 className='logo-heading text-white/80 text-center text-xl font-medium'>
-         Trusted by the world’s most innovative teams
+          Trusted by the world’s most innovative teams
         </h1>
         <div className='grid grid-cols-4 max-md:grid-cols-2 max-sm:grid-cols-2 gap-4'>
           {Logos.map(logo => (
