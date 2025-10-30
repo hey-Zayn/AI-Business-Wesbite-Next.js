@@ -18,142 +18,143 @@ const Hero = () => {
     const hero_img = useRef();
     const hero_badge = useRef();
 
-   useGSAP(() => {
-    // Optimized timeline with smoother settings
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: hero_container.current,
-            start: "top 85%",
-            end: "bottom 15%",
-            toggleActions: "play none none none",
-            markers: false
-        },
-        defaults: {
-            ease: "power2.out"
-        }
-    });
-
-    // Smoother badge animation
-    tl.fromTo(hero_badge.current,
-        {
-            opacity: 0,
-            // y: 30,
-            scale: 0.9,
-            filter: "blur(8px)"
-        },
-        {
-            opacity: 1,
-            // y: 0,
-            scale: 1,
-            filter: "blur(0px)",
-            duration: 0.9,
-            ease: "back.out(1.5)",
-            clearProps: "filter"
-        }
-    )
-    // Smoother heading animation
-    .fromTo(hero_h1.current,
-        {
-            opacity: 0,
-            y: 50,
-            scale: 0.95
-        },
-        {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 1.1,
-            ease: "power3.out"
-        },
-        "-=0.3"
-    )
-    // Smoother paragraph animation
-    .fromTo(hero_p.current,
-        {
-            opacity: 0,
-            y: 40,
-            scale: 0.98
-        },
-        {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 1.0,
-            ease: "power2.out"
-        },
-        "-=0.5"
-    )
-    // Smoother button animation
-    .fromTo(hero_button.current,
-        {
-            opacity: 0,
-            y: 30,
-            scale: 0.95
-        },
-        {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out"
-        },
-        "-=0.4"
-    )
-    // Smoother image animation
-    .fromTo(hero_img.current,
-        {
-            opacity: 0,
-            y: 60,
-            scale: 0.98
-        },
-        {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 1.3,
-            ease: "power3.out",
-            onStart: function() {
-                
-                gsap.to(hero_img.current, {
-                    // y: -0,
-                    // duration: 3,
-                    // ease: "sine.inOut",
-                    // yoyo: true,
-                    // repeat: -1,
-                    // repeatDelay: 0.5
-                });
+    useGSAP(() => {
+        // Optimized timeline with smoother settings
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: hero_container.current,
+                start: "top 85%",
+                end: "bottom 15%",
+                toggleActions: "play none none none",
+                markers: false
+            },
+            defaults: {
+                ease: "power2.out"
             }
-        },
-        "-=0.2"
-    );
+        });
 
-    // Smoother continuous animations
-    const continuousTl = gsap.timeline({ 
-        repeat: -1, 
-        yoyo: true,
-        defaults: {
+        // Smoother badge animation
+        tl.fromTo(hero_badge.current,
+            {
+                opacity: 0,
+                // y: 30,
+                scale: 0.9,
+                filter: "blur(8px)"
+            },
+            {
+                opacity: 1,
+                // y: 0,
+                scale: 1,
+                filter: "blur(0px)",
+                duration: 1,
+                ease: "back.out(1.5)",
+                clearProps: "filter"
+            }
+        )
+            // Smoother heading animation
+            .fromTo(hero_h1.current,
+                {
+                    opacity: 0,
+                    y: 50,
+                    scale: 0.95
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 1,
+                    ease: "power3.out"
+                },
+                "-=0.3"
+            )
+            // Smoother paragraph animation
+            .fromTo(hero_p.current,
+                {
+                    opacity: 0,
+                    y: 40,
+                    scale: 0.98
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 1,
+                    ease: "power2.out"
+                },
+                "-=0.5"
+            )
+            // Smoother button animation
+            .fromTo(hero_button.current,
+                {
+                    opacity: 0,
+                    y: 30,
+                    scale: 0.95,
+                    ease: "power2.inOut"
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.8,
+                    ease: "power2.inOut"
+                },
+                "-=0.4"
+            )
+            // Smoother image animation
+            .fromTo(hero_img.current,
+                {
+                    opacity: 0,
+                    y: 60,
+                    scale: 0.98
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.8,
+                    ease: "power3.out",
+                    onStart: function () {
+
+                        gsap.to(hero_img.current, {
+                            // y: -0,
+                            // duration: 3,
+                            // ease: "sine.inOut",
+                            // yoyo: true,
+                            // repeat: -1,
+                            // repeatDelay: 0.5
+                        });
+                    }
+                },
+                "-=0.2"
+            );
+
+        // Smoother continuous animations
+        const continuousTl = gsap.timeline({
+            repeat: -1,
+            yoyo: true,
+            defaults: {
+                ease: "sine.inOut"
+            }
+        });
+
+        // Subtle continuous animations
+        continuousTl.to(hero_badge.current, {
+            y: -0,
+            duration: 3,
             ease: "sine.inOut"
-        }
-    });
+        }, 0)
+            .to(hero_h1.current.querySelector('span'), {
+                backgroundPosition: "0% -50%",
+                duration: 4,
+                ease: "none"
+            }, 0)
+            .to(hero_button.current, {
+                rotationY: 1,
+                duration: 3,
+                ease: "sine.inOut"
+            }, 0);
 
-    // Subtle continuous animations
-    continuousTl.to(hero_badge.current, {
-        y: -0,
-        duration: 3,
-        ease: "sine.inOut"
-    }, 0)
-    .to(hero_h1.current.querySelector('span'), {
-        backgroundPosition: "0% -50%",
-        duration: 4,
-        ease: "none"
-    }, 0)
-    .to(hero_button.current, {
-        rotationY: 1,
-        duration: 3,
-        ease: "sine.inOut"
-    }, 0);
-
-}, { scope: hero_container });
+    }, { scope: hero_container });
 
 
     return (
@@ -165,7 +166,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className='w-full text-center space-y-6 mb-10 z-50 relative '>
+                <div className='w-full text-center space-y-6 mb-10 z-20 relative '>
                     <h1 ref={hero_h1} className='text-8xl max-md:text-6xl max-sm:text-4xl leading-22 max-md:leading-14 max-sm:leading-9'>
                         Boost your <br />
                         <span className="bg-gradient-to-b from-white to-purple-600 bg-clip-text text-transparent">
