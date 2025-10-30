@@ -36,28 +36,51 @@ A modern, high-performance landing page for AI startups built with **Next.js 14*
 
 my-app/
 ├── app/ # Next.js 14 app directory
+
 │ ├── globals.css # Global styles and Tailwind imports
+
 │ ├── layout.tsx # Root layout component
+
 │ ├── page.tsx # Home page
+
 │ └── favicon.ico # Site favicon
+
 ├── components/ # React components
+
 │ ├── ui/ # Reusable UI components
+
 │ │ ├── Button.tsx
+
 │ │ ├── Container.tsx
+
 │ │ └── Section.tsx
+
 │ └── page_component/ # Page sections
+
 │ ├── Hero.jsx
+
 │ ├── Compainies.jsx
+
 │ ├── Bento.jsx
+
 │ ├── Features.jsx
+
 │ ├── Client.jsx
+
 │ ├── Pricing.jsx
+
 │ ├── CTA.jsx
+
 │ └── Footer.jsx
+
 ├── public/ # Static assets
+
 │ ├── images/ # Images and graphics
+
 ├── types/ # TypeScript type definitions
+
 │ └── index.ts
+
 └── configuration files # Package.json, tsconfig, etc.
 
 
