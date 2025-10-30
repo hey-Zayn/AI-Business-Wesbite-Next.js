@@ -2,7 +2,7 @@
 
 A modern, high-performance landing page for AI startups built with **Next.js 14** and **GSAP animations**. Features smooth interactions, responsive design, and optimal performance for converting visitors into customers.
 
-![Project Preview](./public/images/preview.png)
+![Project Preview](./public/Ai-startup.png)
 
 ## ✨ Live Demo
 
