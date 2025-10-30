@@ -170,7 +170,7 @@ const Features = () => {
                         <div className='w-[300px] max-sm:w-full feature-item'>
                             <div className='flex flex-col gap-4'>
                                 <h2 className='flex text-lg gap-2'><ChartNoAxesColumn size={22} className='transition-colors duration-300' /> <span>Visual reports</span></h2>
-                                <h3 className='flex-wrap text-white/70'>Visual insights into your site's performance.</h3>
+                                <h3 className='flex-wrap text-white/70'>Visual insights into your site`s performance.</h3>
                             </div>
                         </div>
 
