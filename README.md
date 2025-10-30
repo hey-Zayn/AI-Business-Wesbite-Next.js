@@ -6,11 +6,11 @@ A modern, high-performance landing page for AI startups built with **Next.js 14*
 
 ## ✨ Live Demo
 
-[**🌐 View Live Website**](https://your-ai-landing.netlify.app)
+[**🌐 View Live Website**](https://ai-starup.netlify.app/)
 
 ## 📹 Video Demo
 
-[**🎥 Watch Video Demo**](https://www.linkedin.com/feed/update/urn:li:activity:1234567890/) <!-- Link to your LinkedIn post -->
+[**🎥 Watch Video Demo**](https://www.linkedin.com/feed/update/urn:li:activity:7389730075354628098/) <!-- Link to your LinkedIn post -->
 
 ## 🛠️ Tech Stack
 
@@ -33,3 +33,50 @@ A modern, high-performance landing page for AI startups built with **Next.js 14*
 - 🚀 **Easy to Customize** - Well-structured and documented code
 
 ## 🏗️ Project Structure
+
+my-app/
+├── app/ # Next.js 14 app directory
+│ ├── globals.css # Global styles and Tailwind imports
+│ ├── layout.tsx # Root layout component
+│ ├── page.tsx # Home page
+│ └── favicon.ico # Site favicon
+├── components/ # React components
+│ ├── ui/ # Reusable UI components
+│ │ ├── Button.tsx
+│ │ ├── Container.tsx
+│ │ └── Section.tsx
+│ └── page_component/ # Page sections
+│ ├── Hero.jsx
+│ ├── Compainies.jsx
+│ ├── Bento.jsx
+│ ├── Features.jsx
+│ ├── Client.jsx
+│ ├── Pricing.jsx
+│ ├── CTA.jsx
+│ └── Footer.jsx
+├── public/ # Static assets
+│ ├── images/ # Images and graphics
+├── types/ # TypeScript type definitions
+│ └── index.ts
+└── configuration files # Package.json, tsconfig, etc.
+
+
+
+
+
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18.17 or later
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/hey-Zayn/AI-Business-Wesbite-Next.js.git
+cd ai-startup-landing
+
+
+
